@@ -19,9 +19,10 @@ Each extension should probably look like:
 local vim = vim
 local extensions = {}
 local inlay_hints = require('lsp_extensions.inlay_hints')
+local fs_inlay_hints = require('lsp_extensions.fs_inlay_hints')
 
 extensions.inlay_hints = function(opts)
-  vim.lsp.buf_request(0, 'rust-analyzer/inlayHints', inlay_hints.get_params(), inlay_hints.get_callback(opts))
+  fs_inlay_hints.get_callback(opts)
 end
 
 return extensions
